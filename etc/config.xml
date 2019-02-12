@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <markshust_twilio>
+            <general>
+                <enabled>0</enabled>
+                <account_sid />
+                <auth_token />
+                <send_from_number />
+                <send_to_number />
+            </general>
+        </markshust_twilio>
+    </default>
+</config>

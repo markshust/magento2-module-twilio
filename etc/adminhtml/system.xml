@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="markshust_twilio" translate="label" sortOrder="1000">
+            <label>Twilio</label>
+        </tab>
+        <section id="markshust_twilio" translate="label" sortOrder="1000" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>General Configuration</label>
+            <tab>markshust_twilio</tab>
+            <resource>MarkShust_Twilio::general</resource>
+            <group id="general" translate="label" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>General Configuration</label>
+                <field id="enabled" translate="label" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0" type="select">
+                    <label>Is Enabled?</label>
+                    <comment><![CDATA[Retrieve credentials from the <a href="https://www.twilio.com/console" target="_blank">Twilio Console</a>.]]></comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="account_sid" translate="label" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Account SID</label>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                </field>
+                <field id="auth_token" translate="label" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0" type="obscure">
+                    <label>Auth Token</label>
+                    <backend_model>Magento\Config\Model\Config\Backend\Encrypted</backend_model>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                </field>
+                <field id="send_from_number" translate="label" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Send From Number</label>
+                    <comment>Send notifications from this number (must be number registered to Twilio account). Format: +12165551212</comment>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                </field>
+                <field id="send_to_number" translate="label" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Send To Number</label>
+                    <comment>Send notifications to this number. Format: +12165551212</comment>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
