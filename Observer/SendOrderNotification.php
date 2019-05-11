@@ -9,6 +9,10 @@ use Magento\Store\Model\ScopeInterface;
 use Psr\Log\LoggerInterface;
 use Twilio\Rest\ClientFactory;
 
+/**
+ * Class SendOrderNotification
+ * @package MarkShust\Twilio\Observer
+ */
 class SendOrderNotification implements ObserverInterface
 {
     /** @var ClientFactory */
